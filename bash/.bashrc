@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # Set prompt length to a maximum of 3 parent directories
-export PROMP_DIRTRIM=3
+export PROMPT_DIRTRIM=3
 
 alias vim="nvim"
 
@@ -125,5 +125,9 @@ alias vim="nvim"
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV=/home/allan/.local/bin/virtualenv
-source /home/allan/.local/bin/virtualenvwrapper.sh
+source ~/.local/bin/virtualenvwrapper.sh
 
+. "$HOME/.cargo/env"
+
+export PATH="/home/allan/vivado/lt16lab/assembler:$PATH"
+export EDITOR=/usr/bin/nvim

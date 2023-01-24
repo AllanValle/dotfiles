@@ -23,6 +23,7 @@
             }
         }
     },
-    "diagnostic.displayByAle": true
+    "diagnostic.displayByAle": true,
+    "python.analysis.stubPath": "/home/allan/.config/coc/stubs"
 }
 

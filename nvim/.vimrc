@@ -49,12 +49,13 @@ Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
 "Plug 'SirVer/ultisnips'
 "Plug 'neovim/nvim-lsp'
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/playground'
+" Plug 'nvim-treesitter/playground'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'lervag/vimtex'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'dense-analysis/ale'
+Plug 'vigoux/LanguageTool.nvim'
 
 " Color schemes
 Plug 'sainnhe/gruvbox-material'
