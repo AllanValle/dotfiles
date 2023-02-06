@@ -47,6 +47,7 @@ return packer.startup(function(use)
   use "lervag/vimtex"           -- Latex Compiler
   use "mbbill/undotree"         
   use "vim-utils/vim-man"
+  use "alpertuna/vim-header"
 
   -- Colorschemes
   use "gruvbox-community/gruvbox"
