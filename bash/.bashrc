@@ -124,10 +124,10 @@ alias vim="nvim"
 # virtualenv and virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/home/allan/.local/bin/virtualenv
+export VIRTUALENVWRAPPER_VIRTUALENV=/home/$(whoami)/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh
 
 . "$HOME/.cargo/env"
 
-export PATH="/home/allan/vivado/lt16lab/assembler:$PATH"
+export PATH="/home/$(whoami)/vivado/lt16lab/assembler:$PATH"
 export EDITOR=/usr/bin/nvim
