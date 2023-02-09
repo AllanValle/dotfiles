@@ -69,3 +69,5 @@ keymap("v", ">", ">gv", opts)
 keymap("n", "<leader>pf", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", opts)
 
+-- Vim Commentary
+keymap("v", "<leader>c", ":Commentary<cr>", opts)
