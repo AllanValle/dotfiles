@@ -71,3 +71,6 @@ keymap("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Vim Commentary
 keymap("v", "<leader>c", ":Commentary<cr>", opts)
+
+-- Vim header
+keymap("n", "<F4>", ":AddMinHeader<CR>", opts)
