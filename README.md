@@ -20,11 +20,9 @@ sudo apt install neovim
 [Source](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 ## Installing nerdfonts
-````bash
-Download latest [Fira Code Nerdfonts](https://github.com/ryanoasis/nerd-fonts/releases/latest).
-Unzip tar.xz or zip.
-````
-Install ttf font using the font manager of your choice (e.g. font-manager in Ubuntu)
+- Download latest [Fira Code Nerdfonts](https://github.com/ryanoasis/nerd-fonts/releases/latest).
+- Unzip tar.xz or zip.
+- Install ttf font using the font manager of your choice (e.g. font-manager in Ubuntu)
 
 ## Installing plugins
 Use the command
