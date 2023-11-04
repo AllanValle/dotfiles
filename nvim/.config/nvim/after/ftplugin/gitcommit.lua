@@ -6,4 +6,3 @@
 -- end
 vim.bo.textwidth = 65
 vim.wo.colorcolumn = '+0'
-
