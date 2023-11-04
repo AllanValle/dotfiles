@@ -66,7 +66,10 @@ keymap("v", ">", ">gv", opts)
 --keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
-keymap("n", "<leader>pf", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<leader>pf",
+    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+    opts)
+keymap("n", "<leader>fb", "<cmd>:Telescope file_browser<cr>", opts)
 keymap("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Vim Commentary
@@ -74,3 +77,6 @@ keymap("v", "<leader>c", ":Commentary<cr>", opts)
 
 -- Vim header
 keymap("n", "<F4>", ":AddMinHeader<CR>", opts)
+
+-- Exit terminal with esc
+keymap("t", "<Esc>", "<C-\\><C-n>", opts)
