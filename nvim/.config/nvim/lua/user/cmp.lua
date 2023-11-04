@@ -51,6 +51,7 @@ cmp.setup {
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
+-- Important keymaps for lsp completion
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
 	["<C-j>"] = cmp.mapping.select_next_item(),
