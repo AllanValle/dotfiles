@@ -116,6 +116,7 @@ cmp.setup {
     { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
+    { name = "cmp_zotcite" },
     { name = "path" },
   },
   confirm_opts = {

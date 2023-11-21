@@ -89,17 +89,35 @@ return packer.startup(function(use)
         run = ":TSUpdate",
     }
     -- neorg
-    use {
-        "nvim-neorg/neorg",
-        run = ":Neorg sync-parsers",
-        requires = { "nvim-lua/plenary.nvim", "folke/zen-mode.nvim" },
-    }
+    -- use {
+    --     "nvim-neorg/neorg",
+    --     run = ":Neorg sync-parsers",
+    --     requires = { "nvim-lua/plenary.nvim", "folke/zen-mode.nvim" },
+    -- }
+
+    -- zk-nvim
+    use("mickael-menu/zk-nvim")
 
     -- lualine
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+
+    -- glow (markdown-preview)
+    -- use { "ellisonleao/glow.nvim", config = function() require("glow").setup() end }
+
+    -- markdown preview
+    -- use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    -- zotcite
+    use("jalvesaq/zotcite")
+    -- cmp-zotcite
+    use("jalvesaq/cmp-zotcite")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

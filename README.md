@@ -29,5 +29,12 @@ Use the command
 ````
 :PackerUpdate
 ````
+# Enabling opening of zotcite attachments in Zotero
+
+````bash
+xdg-mime default zotero.desktop x-scheme-handler/Zotero
+````
+
+Add "--url % u" after the binary path of ~/.local/share/applications/zotero.desktop
 
 
