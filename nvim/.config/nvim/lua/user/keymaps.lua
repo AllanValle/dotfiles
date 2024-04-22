@@ -66,8 +66,36 @@ keymap("v", ">", ">gv", opts)
 --keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
-keymap("n", "<leader>pf", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<leader>pf",
+    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+    opts)
+keymap("n", "<leader>fb", "<cmd>:Telescope file_browser<cr>", opts)
 keymap("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>n", "<cmd>:Telescope zk notes<cr>", opts)
+keymap("n", "<leader>t", "<cmd>:Telescope zk tags<cr>", opts)
 
 -- Vim Commentary
 keymap("v", "<leader>c", ":Commentary<cr>", opts)
+
+-- Vim header
+keymap("n", "<F4>", ":AddMinHeader<CR>", opts)
+
+-- Exit terminal with esc
+keymap("t", "<Esc>", "<C-\\><C-n>", term_opts)
+
+-- zk
+---- Create a new note after asking for its title.
+keymap("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", opts)
+
+-- Open notes.
+keymap("n", "<leader>zp", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", opts)
+-- Open notes associated with the selected tags.
+keymap("n", "<leader>zt", "<Cmd>ZkTags<CR>", opts)
+
+-- Search for the notes matching a given query.
+keymap("n", "<leader>zf", "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", opts)
+-- Search for the notes matching the current visual selection.
+keymap("v", "<leader>zf", ":'<,'>ZkMatch<CR>", opts)
+
+-- format markdown
+keymap("n", "<leader>f", "<Cmd>!mdformat --wrap 72 %<CR>", opts)

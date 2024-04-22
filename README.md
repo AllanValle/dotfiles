@@ -20,16 +20,21 @@ sudo apt install neovim
 [Source](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 ## Installing nerdfonts
-````bash
-mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts && curl -fLo "Fira Code Regular Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete%20Mono.ttf?raw=true
-````
-Intall the ttf font using the font manager of your choice (e.g. font-manager in Ubuntu)
+- Download latest [Fira Code Nerdfonts](https://github.com/ryanoasis/nerd-fonts/releases/latest).
+- Unzip tar.xz or zip.
+- Install ttf font using the font manager of your choice (e.g. font-manager in Ubuntu)
 
 ## Installing plugins
 Use the command
 ````
 :PackerUpdate
 ````
+# Enabling opening of zotcite attachments in Zotero
+
+````bash
+xdg-mime default zotero.desktop x-scheme-handler/Zotero
+````
+
+Add "--url % u" after the binary path of ~/.local/share/applications/zotero.desktop
 
 
