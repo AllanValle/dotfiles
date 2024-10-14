@@ -169,5 +169,5 @@ export PATH=/home/allan/Downloads/arduino-ide_2.1.0_Linux_64bit:$PATH
 # https://stackoverflow.com/questions/52979927/npm-warn-checkpermissions-missing-write-access-to-usr-local-lib-node-modules
 export PATH="$HOME/.npm/bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"
-export ZK_NOTEBOOK_DIR=/home/allan/zk
+export ZK_NOTEBOOK_DIR=/home/$(whoami)/zk
 
