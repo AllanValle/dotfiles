@@ -19,6 +19,8 @@ sudo apt install neovim
 ````
 [Source](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
+You have to install npm to be able to use the LSP functionality
+
 ## Installing nerdfonts
 - Download latest [Fira Code Nerdfonts](https://github.com/ryanoasis/nerd-fonts/releases/latest).
 - Unzip tar.xz or zip.
