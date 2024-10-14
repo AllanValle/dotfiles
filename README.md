@@ -2,7 +2,7 @@
 Clone this repository in the home directory (i.e. /home/$USER )
 ````bash
 git clone https://github.com/AllanValle/dotfiles.git
-cd ~/dotfile
+cd ~/dotfiles
 stow nvim       # copies config into .config/nvim/ 
 stow tmux       # copies config into .config/tmux and so on
 
@@ -39,4 +39,21 @@ xdg-mime default zotero.desktop x-scheme-handler/Zotero
 
 Add "--url % u" after the binary path of ~/.local/share/applications/zotero.desktop
 
+# Download zk release from [github](https://github.com/zk-org/zk/releases)
+Make sure that the binary is in PATH
 
+# npm is needed for Mason.nvim to work correctly
+
+# vimtex requires the installation of [tree-sitter CLI](https://github.com/tree-sitter/tree-sitter/releases)
+
+# install xclip
+````bash
+sudo apt install xclip
+````
+
+# Create zk notebook
+````bash
+cd ~
+zk init zk
+````
+Then, update the config.toml file
