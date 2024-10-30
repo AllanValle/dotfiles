@@ -139,11 +139,7 @@ export PROMPT_DIRTRIM=3
 
 alias vim="nvim"
 
-# virtualenv and virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/home/$(whoami)/.local/bin/virtualenv
-source ~/.local/bin/virtualenvwrapper.sh
+# Command prompt showing current git branch
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
@@ -169,5 +165,11 @@ export PATH=/home/allan/Downloads/arduino-ide_2.1.0_Linux_64bit:$PATH
 # https://stackoverflow.com/questions/52979927/npm-warn-checkpermissions-missing-write-access-to-usr-local-lib-node-modules
 export PATH="$HOME/.npm/bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"
-export ZK_NOTEBOOK_DIR=/home/$(whoami)/zk
+export ZK_NOTEBOOK_DIR="/home/$(whoami)/zk"
 
+export PATH="$PATH:/usr/local/go/bin"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

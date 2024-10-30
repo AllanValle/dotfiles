@@ -31,7 +31,12 @@ Use the command
 ````
 :PackerUpdate
 ````
-# Enabling opening of zotcite attachments in Zotero
+## Zotcite
+### Install pyzotero
+````
+pip3 install pyzotero
+````
+### Enabling opening of zotcite attachments in Zotero
 
 ````bash
 xdg-mime default zotero.desktop x-scheme-handler/Zotero
@@ -49,6 +54,12 @@ Make sure that the binary is in PATH
 # install xclip
 ````bash
 sudo apt install xclip
+````
+
+# install zotcite dependencies
+````bash
+sudo apt install python3-pyqt5 python3-poppler-qt5
+python3 -m pip install --user --upgrade pynvim
 ````
 
 # Create zk notebook

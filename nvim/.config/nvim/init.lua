@@ -12,5 +12,6 @@ require "user.vimtex"
 require "user.lualine"
 require "user.zk-nvim"
 require "user.zotcite"
+-- require "user.cmp_zotcite"
 -- require "user.neorg"
 
