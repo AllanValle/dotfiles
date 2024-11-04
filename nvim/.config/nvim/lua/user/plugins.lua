@@ -1,5 +1,34 @@
 local fn = vim.fn
 
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- Setup lazy.nvim
+require("lazy").setup({
+  spec = {
+    -- import your plugins
+    { import = "plugins" },
+  },
+  -- Configure any other settings here. See the documentation for more details.
+  -- colorscheme that will be used when installing plugins.
+  install = { colorscheme = { "habamax" } },
+  -- automatically check for plugin updates
+  checker = { enabled = true },
+})
 -- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -24,104 +53,10 @@ vim.cmd [[
 ]]
 
 -- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
+local status_ok, lazy = pcall(require, "lazy")
 if not status_ok then
     return
 end
 
--- Have packer use a popup window
-packer.init {
-    display = {
-        open_fn = function()
-            return require("packer.util").float { border = "rounded" }
-        end,
-    },
-}
-
 -- Install your plugins here
-return packer.startup(function(use)
-    -- My plugins here
-    use "wbthomason/packer.nvim" -- Have packer manage itself
-    use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
-    use "nvim-lua/plenary.nvim"  -- Useful lua functions used ny lots of plugins
-    use "lervag/vimtex"          -- Latex Compiler
-    use "mbbill/undotree"
-    use "vim-utils/vim-man"
-    use "alpertuna/vim-header"
-    use "tpope/vim-commentary"
-
-    -- Colorschemes
-    use "gruvbox-community/gruvbox"
-
-    -- cmp plugins
-    use "hrsh7th/nvim-cmp"         -- The completion plugin
-    use "hrsh7th/cmp-buffer"       -- buffer completions
-    use "hrsh7th/cmp-path"         -- path completions
-    use "hrsh7th/cmp-cmdline"      -- cmdline completions
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
-    use "hrsh7th/cmp-nvim-lsp"
-    use "windwp/nvim-autopairs"    -- Autopairs
-
-    -- snippets
-    use "L3MON4D3/LuaSnip"             --snippet engine
-    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-
-    -- LSP
-    use "neovim/nvim-lspconfig"             -- enable LSP
-    use "williamboman/mason.nvim"           -- ensures installation of an LSP
-    use "williamboman/mason-lspconfig.nvim" -- bridges nvim-lspconfig and mason be telling which nvim-lspconfig command to use
-
-    -- Telescope
-    use {
-        "nvim-telescope/telescope.nvim",
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
-
-    -- Telescope File-Browser
-    use {
-        "nvim-telescope/telescope-file-browser.nvim",
-        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-    }
-
-    -- Treesitter
-    use {
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
-    }
-    -- neorg
-    -- use {
-    --     "nvim-neorg/neorg",
-    --     run = ":Neorg sync-parsers",
-    --     requires = { "nvim-lua/plenary.nvim", "folke/zen-mode.nvim" },
-    -- }
-
-    -- zk-nvim
-    use("mickael-menu/zk-nvim")
-
-    -- lualine
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
-
-    -- glow (markdown-preview)
-    -- use { "ellisonleao/glow.nvim", config = function() require("glow").setup() end }
-
-    -- markdown preview
-    -- use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-    use({
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
-    })
-
-    -- zotcite
-    use("jalvesaq/zotcite")
-    -- cmp-zotcite
-    use("jalvesaq/cmp-zotcite")
-
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
-    if PACKER_BOOTSTRAP then
-        require("packer").sync()
-    end
-end)
+return lazy.setup('plugins')
