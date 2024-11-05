@@ -40,10 +40,10 @@ return {
         },
 
         -- Telescope File-Browser
-        -- use {
-        --     "nvim-telescope/telescope-file-browser.nvim",
-        --     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-        -- }
+        {
+             "nvim-telescope/telescope-file-browser.nvim",
+             dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+        },
 
         -- Treesitter
         {
