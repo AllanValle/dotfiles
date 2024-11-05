@@ -4,8 +4,9 @@ if not status_ok then
 end
 
 configs.setup {
-    ensure_installed = {"c", "cpp", "latex", "python"},
-    sync_install = false,
+    ensure_installed =
+        {"c", "cpp", "latex", "python", "markdown", "markdown_inline", "yaml", "latex", "html"},
+    sync_install = true,
     ignore_install = { "" }, -- List of parsers to ignore installing
     highlight = {
         enable = true,       -- false will disable the whole extension
@@ -15,3 +16,6 @@ configs.setup {
     },
     indent = { enable = true, disable = { "" } },
 }
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldenable = false
