@@ -52,7 +52,10 @@ return {
         },
 
         -- zk-nvim
-        "mickael-menu/zk-nvim",
+        {
+            "mickael-menu/zk-nvim",
+            dependencies = "nvim-telescope/telescope.nvim"
+        },
 
         -- lualine
         {

@@ -6,7 +6,7 @@ end
 zk.setup {
     -- can be "telescope", "fzf", "fzf_lua" or "select" (`vim.ui.select`)
     -- it's recommended to use "telescope", "fzf" or "fzf_lua"
-    picker = "select",
+    picker = "telescope",
 
     lsp = {
         -- `config` is passed to `vim.lsp.start_client(config)`
