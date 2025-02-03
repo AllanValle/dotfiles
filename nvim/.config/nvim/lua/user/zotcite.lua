@@ -1,6 +1,3 @@
-vim.g.zotcite_open_in_zotero = 1
-vim.g.ZCitationTemplate = '{Authors}_{Year}'
-vim.g.zotcite_conceallevel = 3
 
 local status_ok, zotcite = pcall(require, "zotcite")
 if not status_ok then
@@ -9,4 +6,7 @@ end
 
 zotcite.setup({
     filetypes = { "pandoc", "markdown" },
+    open_in_zotero = true,
+    conceallevel = 3,
+    ZCitationTemplate = '{Authors}_{Year}'
 })
