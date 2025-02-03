@@ -21,48 +21,47 @@ sudo apt install neovim
 
 You have to install npm to be able to use the LSP functionality
 
+## Installing pynvim
+Install virtual environment
+````bash
+python3 -m venv ~/.venv/nvim
+~/.venv/nvim/bin/pip install neovim
+````
+
 ## Installing nerdfonts
 - Download latest [Fira Code Nerdfonts](https://github.com/ryanoasis/nerd-fonts/releases/latest).
 - Unzip tar.xz or zip.
 - Install ttf font using the font manager of your choice (e.g. font-manager in Ubuntu)
 
-## Installing plugins
-Use the command
-````
-:PackerUpdate
-````
 ## Zotcite
-### Install pyzotero
+````bash
+sudo apt install python3-pyqt5 python3-poppler-qt5
+python3 -m pip install --user --upgrade pynvim
 ````
-pip3 install pyzotero
-````
-### Enabling opening of zotcite attachments in Zotero
 
+#### pyyaml
+````
+~/.venv/nvim/bin/pip install pyyaml
+````
+
+### Enabling opening of zotcite attachments in Zotero
 ````bash
 xdg-mime default zotero.desktop x-scheme-handler/Zotero
 ````
 
 Add "--url % u" after the binary path of ~/.local/share/applications/zotero.desktop
 
-# Download zk release from [github](https://github.com/zk-org/zk/releases)
+## Download zk release from [github](https://github.com/zk-org/zk/releases)
 Make sure that the binary is in PATH
 
-# npm is needed for Mason.nvim to work correctly
+## vimtex requires the installation of [tree-sitter CLI](https://github.com/tree-sitter/tree-sitter/releases)
 
-# vimtex requires the installation of [tree-sitter CLI](https://github.com/tree-sitter/tree-sitter/releases)
-
-# install xclip
+## Easy from nvim copy/paste with xclip
 ````bash
 sudo apt install xclip
 ````
 
-# install zotcite dependencies
-````bash
-sudo apt install python3-pyqt5 python3-poppler-qt5
-python3 -m pip install --user --upgrade pynvim
-````
-
-# Create zk notebook
+## Create zk notebook
 ````bash
 cd ~
 zk init zk
