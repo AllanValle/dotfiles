@@ -82,7 +82,7 @@ end
 
 -- " use a custom Markdown style. Must be an absolute path
 -- " like '/Users/username/markdown.css' or expand('~/markdown.css')
--- let g:mkdp_markdown_css = ''
+vim.g.mkdp_markdown_css = vim.fn.expand('~/custom-markdown.css')
 
 -- " use a custom highlight style. Must be an absolute path
 -- " like '/Users/username/highlight.css' or expand('~/highlight.css')
