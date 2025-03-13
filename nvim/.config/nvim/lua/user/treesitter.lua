@@ -5,9 +5,9 @@ end
 
 configs.setup {
     ensure_installed =
-        {"c", "cpp", "latex", "python", "markdown", "markdown_inline", "yaml", "latex", "html"},
+        { "c", "cpp", "python", "markdown", "markdown_inline", "yaml", "html" },
     sync_install = true,
-    ignore_install = { "" }, -- List of parsers to ignore installing
+    ignore_install = { "javascript", "typescript", "latex" }, -- List of parsers to ignore installing
     highlight = {
         enable = true,       -- false will disable the whole extension
         disable = { "" },    -- list of language that will be disabled
