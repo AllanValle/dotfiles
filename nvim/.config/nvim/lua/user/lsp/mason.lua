@@ -7,8 +7,8 @@ local servers = {
     -- "bashls",
     -- "jsonls",
     -- "yamlls",
+    -- "ltex",
     "clangd",
-    "ltex",
     "marksman",
 }
 
@@ -23,6 +23,10 @@ local settings = {
     },
     log_level = vim.log.levels.INFO,
     max_concurrent_installers = 4,
+    registries = {
+        "github:mason-org/mason-registry",
+        "github:visimp/mason-registry",
+    }
 }
 
 require("mason").setup(settings)
@@ -35,6 +39,8 @@ local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
     return
 end
+local ltex_opts = require("user.lsp.settings.ltex-ls-plus")
+lspconfig.ltex.setup(ltex_opts)
 
 local opts = {}
 

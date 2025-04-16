@@ -30,7 +30,8 @@ return {
         "neovim/nvim-lspconfig",             -- enable LSP
         dependencies = {
             "williamboman/mason.nvim",           -- ensures installation of an LSP
-            "williamboman/mason-lspconfig.nvim"} -- bridges nvim-lspconfig and mason be telling which nvim-lspconfig command to use
+            "williamboman/mason-lspconfig.nvim", -- bridges nvim-lspconfig and mason be telling which nvim-lspconfig command to use
+            }
         },
 
         -- Telescope
