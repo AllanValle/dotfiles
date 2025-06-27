@@ -7,7 +7,7 @@ local servers = {
     -- "bashls",
     -- "jsonls",
     -- "yamlls",
-    -- "ltex",
+    -- "ltex_plus",
     "clangd",
     "marksman",
 }
@@ -40,7 +40,7 @@ if not lspconfig_status_ok then
     return
 end
 local ltex_opts = require("user.lsp.settings.ltex-ls-plus")
-lspconfig.ltex.setup(ltex_opts)
+lspconfig.ltex_plus.setup(ltex_opts)
 
 local opts = {}
 
