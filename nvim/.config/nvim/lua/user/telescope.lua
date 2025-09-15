@@ -11,7 +11,7 @@ telescope.setup {
 
         prompt_prefix = " ",
         selection_caret = " ",
-        path_display = { "smart" },
+        path_display = { shorten = 6, exclude={1,2,3,4} },
 
         mappings = {
             i = {
@@ -86,6 +86,15 @@ telescope.setup {
         -- }
         -- Now the picker_config_key will be applied every time you call this
         -- builtin picker
+        live_grep = {
+            -- get pane width from tmux and use half the width for the fname_width
+            -- local fname_width1 = math.floor(vim.fn.system("tmux display -p '#{pane_width}'") / 2)
+            -- Maybe running outside of tmux
+            -- if fname_width1 == 0 then
+            --     fname_width1 = 30
+            -- end
+            fname_width = 100
+        },
     },
     extensions = {
         -- Your extension configuration goes here:
