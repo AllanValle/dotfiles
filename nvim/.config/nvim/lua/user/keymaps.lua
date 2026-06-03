@@ -71,7 +71,7 @@ keymap("n", "<leader>pf",
     opts)
 keymap("n", "<leader>fb", "<cmd>:Telescope file_browser<cr>", opts)
 keymap("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>n", "<cmd>:Telescope zk notes<cr>", opts)
+-- keymap("n", "<leader>n", "<cmd>:Telescope zk notes<cr>", opts)
 keymap("n", "<leader>t", "<cmd>:Telescope zk tags<cr>", opts)
 
 -- Vim Commentary
@@ -88,7 +88,7 @@ keymap("t", "<Esc>", "<C-\\><C-n>", term_opts)
 keymap("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", opts)
 
 -- Open notes.
-keymap("n", "<leader>zp", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", opts)
+keymap("n", "<leader>n", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", opts)
 -- Open notes associated with the selected tags.
 keymap("n", "<leader>zt", "<Cmd>ZkTags<CR>", opts)
 
