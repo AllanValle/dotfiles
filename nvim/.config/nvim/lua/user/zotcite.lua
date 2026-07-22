@@ -8,5 +8,6 @@ zotcite.setup({
     filetypes = { "pandoc", "markdown" },
     open_in_zotero = true,
     conceallevel = 3,
-    ZCitationTemplate = '{Authors}_{Year}'
+    ZCitationTemplate = '{Authors}_{Year}',
+    key_type = "zotero"
 })
